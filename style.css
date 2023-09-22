@@ -8,6 +8,7 @@
     --bc-main: hsl(0, 0%, 100%);
     --bc-body: hsl(30, 38%, 92%);
     --bc-button: hsl(158, 36%, 37%);
+    --bc-button-hover: hsl(158, 38%, 52%);
     --fc-titlecontent: hsl(228, 12%, 48%);
     --fc-nameprod: hsl(212, 21%, 14%);
     --fc-price-discounted:hsl(158, 36%, 37%);
@@ -15,8 +16,6 @@
     --fc-button: hsl(0, 0%, 100%);
 
     --fs-body: 1.4rem;
-
-    
 
     font-size: 62.5%;
 
@@ -33,30 +32,40 @@ body{
 main{
     
     background-color: var(--bc-main) ;
-    /* padding: 3rem 4rem; */
     margin: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     max-width: 32rem;
-
+    border-radius: 5px;
 }
 
-img{
+.secao_imagem{
+    flex:1;
+}
 
+.secao_texto{
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.imagem_conteudo_desktop{
+    display: none;
+}
+
+.imagem_mobile{
     width: 100%;
     border-radius: 5px 5px 0 0 ;
-   
 }
 
 .titulo_conteudo{
-    
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: .5rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1.5em;
     color: var(--fc-titlecontent);
-    
 }
 
 .nome_produto{
@@ -70,10 +79,6 @@ img{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: var(--fc-titlecontent);
-}
-
-.conteudo , .valores, .botao{
-    padding: 0 2rem 2rem 2rem;
 }
 
 .valores{
@@ -100,7 +105,6 @@ img{
 
 .botao{
     width: 100%;
-
 }
 
 button{
@@ -116,7 +120,7 @@ button{
     align-items: center;
     gap: 1rem;
     border-radius: 5px;
-
+    cursor: pointer;
 }
 
 .icone_botao{
@@ -124,4 +128,44 @@ button{
     height: 1.5rem;
 }
 
+button:hover{
+    background: var(--bc-button-hover);  
+}
+
+
+@media (min-width:700px){
+    body{
+        height: 100vh;
+        align-items: center;
+        
+    }
+
+    main{
+        max-width: 50rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0;    
+    }
+ 
+    .imagem_conteudo_mobile{
+        display: none;
+    }
+
+    .imagem_conteudo_desktop{
+        display: inline ;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .imagem_desktop{
+        width: 100%;
+        border-radius: 5px 0 0 5px;
+    }
+    
+    .secao_imagem{
+       width: 100%; 
+    }
+
+   
+}
 
